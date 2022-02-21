@@ -1,7 +1,6 @@
 <h2>Editing Book</h2>
 <% if @book.errors.any? %>
   <p><%= pluralize(@book.errors.count, "error") %> prohibited this product from being saved:</p>
-
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -10,9 +9,9 @@
 <% end %>
 
 <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
-  <h4>Title</h4>
+  <h6>Title</h6>
   <%= f.text_field :title %>
-  <h4>Body</h4>
+  <h6>Body</h6>
   <%= f.text_area :body %>
   <%= f.submit 'Update Book' %>
 <% end %>
